@@ -1,0 +1,20 @@
+{
+  "name": "media-share",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Professional Media Share project for Streamlabs donation handling",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "obs-websocket-js": "^5.0.8",
+    "socket.io-client": "^4.8.3"
+  }
+}
