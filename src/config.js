@@ -15,6 +15,7 @@ function getEnv(name, fallback = '') {
 
 export const config = {
   streamlabsSocketToken: getEnv('STREAMLABS_SOCKET_TOKEN'),
+  youtubeApiKey: getEnv('YOUTUBE_API_KEY', ''),
   logLevel: getEnv('LOG_LEVEL', 'info'),
   streamerBotUrl: getEnv('STREAMERBOT_URL', ''),
   localDonationPort: Number(getEnv('LOCAL_DONATION_PORT', '9000')),

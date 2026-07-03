@@ -43,7 +43,14 @@ export function createStreamlabsClient({ logger, socketToken, onDonation }) {
         return;
       }
 
-      const donation = eventData.message || eventData.data || eventData;
+      const raw = eventData.message || eventData.data || eventData;
+      const donation = Array.isArray(raw) ? raw[0] : raw;
+
+      if (!donation || typeof donation !== 'object') {
+        logger.warn('Invalid donation payload received.');
+        return;
+      }
+
       if (typeof onDonation === 'function') {
         Promise.resolve(onDonation(donation)).catch((error) => {
           logger.error('Donation processing failed.', error);
